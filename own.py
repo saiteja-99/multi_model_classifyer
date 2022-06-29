@@ -4,11 +4,19 @@ import pandas as pd
 import numpy as np
 st.title("**_REAL-FAKE CLASSIFYER_**")
 #st.subheader("Enter Message")
+hide_st_style="""
+    <style>
+    #MainMenu {visibility:hidden;}
+    footer{visibility:hidden;}
+    header {visibility:hidden;}
+    </style>
+    """
+st.markdown(hide_st_style,unsafe_allow_html=True)
 ip=st.text_area('Text to CLASSIFY')
 option=st.sidebar.selectbox('select the model',('svm','svm+pipeline','multinominalNB','multinominalNB+pipeline'))
-df=pd.read_csv("https://raw.githubusercontent.com/saiteja-99/data_set/main/news.csv")
+df=pd.read_csv("news.csv")
 st.sidebar.write("Use below Data to test")
-st.sidebar.write(df.iloc[:,[2,3]])
+st.sidebar.write(df.iloc[:,2])
 if st.button('predict'):
     if option=='svm':
         model=joblib.load("svc")
