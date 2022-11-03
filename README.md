@@ -1,3 +1,3 @@
 # multi_model_classifyer
-USE THIS TO CLASSIFY
+FOR CLASSIFICATION
 https://multimodelclassifyer.herokuapp.com/
